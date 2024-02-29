@@ -75,12 +75,14 @@ time {
   z-index: 1000;
 }
 
-
-.div__Image{
+.div__Image {
   background-size: cover;
   background-position: center;
 }
 
+.shadow__Item {
+  box-shadow: var(--blur1);
+}
 
 @media (max-width: 320px) {
   .container {
