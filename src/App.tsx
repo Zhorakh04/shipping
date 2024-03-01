@@ -6,11 +6,13 @@ import Footer from "./components/Footer/Footer";
 
 const App = () => {
   return (
-    <div>
+    <div className="App">
       <BrowserRouter>
         <Header />
-        <AppRouter />
-        {/* <Footer /> */}
+        <main style={{ marginTop: "50px" }}>
+          <AppRouter />
+        </main>
+        <Footer />
       </BrowserRouter>
     </div>
   );

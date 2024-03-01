@@ -1,4 +1,3 @@
-
 .breadcrumb_navigation {
   height: 130px;
 }
@@ -28,11 +27,13 @@
   display: flex;
   align-items: center;
   margin-top: 10px;
+  font-size: 14px;
 }
 
 .breadcrumb_navigation_item {
   background: white;
   position: relative;
+  font-size: 14px;
 }
 
 .breadcrumb_navigation_item:first-child {
@@ -57,4 +58,8 @@
   right: 12px;
   box-shadow: var(--blur1);
   z-index: 3;
+}
+
+.navigatinoBtns > button {
+  font-size: 14px;
 }

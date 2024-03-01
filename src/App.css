@@ -78,6 +78,7 @@ time {
 .div__Image {
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
 }
 
 .shadow__Item {
@@ -92,6 +93,13 @@ time {
   .next {
     display: none;
   }
+}
+
+.App {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 @media (max-width: 769px) {

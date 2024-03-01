@@ -17,6 +17,9 @@ const Header = ({ ...props }: any) => {
   };
 
   useEffect(() => {
+    // if(window.scrollY){
+
+    // }
     if (active) {
       document.body.style.overflowY = "hidden";
     } else {
