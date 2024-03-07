@@ -1,0 +1,106 @@
+.bid_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.bid_header_lot {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 24px;
+}
+
+.car_name {
+  font-size: 34px;
+}
+
+.upcomming_lots {
+  font-size: 24px;
+  font-weight: 400;
+}
+
+.auction_layer_lot {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  .car_info_list {
+    width: 100%;
+  }
+
+  .auction_bid {
+    background: white;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 16px;
+    width: 288px;
+
+    .Bid_button {
+      width: 90%;
+      background: var(--color1);
+      color: white;
+    }
+  }
+}
+
+.auction_timer {
+  position: relative;
+  box-shadow: 0px 4px 38px 0px #09406729;
+  padding: 20px;
+  border-radius: 256px;
+  background: #09406733;
+
+  .auction_timer_road {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    border: 1vh solid transparent;
+    border-radius: 50%;
+    background: linear-gradient(white, white) content-box no-repeat,
+      conic-gradient(rgb(255, 255, 255) 44%, 0, green) border-box;
+  }
+}
+
+.bid_player_info {
+  width: 132px;
+  height: 132px;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: white;
+  box-shadow: 0px 4px 38px 0px #094067a3;
+
+  svg {
+    width: 45px;
+    height: 29px;
+  }
+}
+
+.place_a_bet {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+
+  button {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    color: white;
+    background: var(--color1);
+  }
+
+  .place_a_bet_money {
+    background: white;
+    padding: 10px;
+    border-radius: 16px;
+    width: 138px;
+    text-align: center;
+  }
+}

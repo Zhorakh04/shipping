@@ -3,7 +3,7 @@ import "./Header.css";
 import Logo from "../Ui/Icons/Logo";
 import FlagUS from "../Ui/Icons/FlagUS";
 import SelectSvg from "../Ui/Icons/SelectSvg";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import CloseIcon from "../Ui/Icons/CloseIcon";
 import NavMenuIcon from "../Ui/Icons/NavMenuIcon";
 
@@ -12,20 +12,28 @@ const Header = ({ ...props }: any) => {
   const { pathname } = useLocation();
   const path = pathname.split("/");
 
-  const clickHandler = () => {
+  const clickHandler = useCallback(() => {
     setActive(!active);
-  };
+  }, [active]);
 
   useEffect(() => {
-    // if(window.scrollY){
-
-    // }
     if (active) {
       document.body.style.overflowY = "hidden";
     } else {
       document.body.style.overflowY = "auto";
     }
   }, [active]);
+
+  useEffect(() => {
+    function updateSize() {
+      if (!(window.innerWidth <= 769) && active) {
+        setActive(false);
+      }
+    }
+    updateSize();
+    window.addEventListener("resize", updateSize);
+    return () => window.removeEventListener("resize", updateSize);
+  }, [active, clickHandler]);
 
   return (
     <header className={`header ${path[path.length - 1]}`}>

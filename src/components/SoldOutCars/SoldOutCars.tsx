@@ -3,7 +3,6 @@ import PopularCars from "../PopularCars/PopularCars";
 const SoldOutCars = () => {
   return (
     <>
-      {" "}
       <PopularCars type="SoldOut" />
     </>
   );

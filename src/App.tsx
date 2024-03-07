@@ -9,7 +9,7 @@ const App = () => {
     <div className="App">
       <BrowserRouter>
         <Header />
-        <main style={{ marginTop: "50px" }}>
+        <main>
           <AppRouter />
         </main>
         <Footer />

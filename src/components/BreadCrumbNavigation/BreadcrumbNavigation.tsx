@@ -1,3 +1,4 @@
+import { useState } from "react";
 import LeftSvg from "../Ui/Icons/LeftSvg";
 import RightSvg from "../Ui/Icons/RightSvg";
 import MyButton from "../Ui/customUi/MyButton/MyButton";
@@ -5,7 +6,7 @@ import "./Breadcrumbnavigation.css";
 
 const BreadcrumbNavigation = () => {
   return (
-    <div className="breadcrumb_navigation">
+    <div className="breadcrumb_navigation container">
       <div>
         <div className="breadcrumb_navigation_list">
           <MyButton className="breadcrumb_navigation_item">Home</MyButton>

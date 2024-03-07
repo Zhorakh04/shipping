@@ -3,18 +3,23 @@ import PrevButton from "../Ui/Icons/PrevButton";
 import SoldOutIcon from "../../assets/soldCar.png";
 
 import "./PopularCars.css";
+import classNames from "classnames";
 
 interface IProp {
   type?: string;
 }
 
 const PopularCars = ({ type }: IProp) => {
-  console.log(type);
+
+  // const carsClass = classNames({
+  //   SoldOut:type === 'SoldOut',
+  //   SoldOut
+  // })
 
   return (
     <div>
       <h3 className="h3Font">
-        {type === "SoldOut" ? "Sold Out" : "Popular Cars"}
+        {type === "SoldOut" ? "Sold Out" : "SoldOut"}
       </h3>
       <div className="popular_cars">
         <div className="popular_cars_nextprevBtn">
@@ -24,7 +29,6 @@ const PopularCars = ({ type }: IProp) => {
         <div className="popular_cars_list">
           <div className="popular_car_item">
             <div className="popular_car_item_image car_image1">
-              {" "}
               {type === "SoldOut" ? (
                 <div className="sold_car_info">
                   <div>25.000$</div>
@@ -58,7 +62,6 @@ const PopularCars = ({ type }: IProp) => {
           </div>
           <div className="popular_car_item">
             <div className="popular_car_item_image car_image3">
-              {" "}
               {type === "SoldOut" ? (
                 <div className="sold_car_info">
                   <div>25.000$</div>
@@ -76,7 +79,6 @@ const PopularCars = ({ type }: IProp) => {
           </div>
           <div className="popular_car_item">
             <div className="popular_car_item_image car_image4">
-              {" "}
               {type === "SoldOut" ? (
                 <div className="sold_car_info">
                   <div>25.000$</div>
@@ -94,7 +96,6 @@ const PopularCars = ({ type }: IProp) => {
           </div>
           <div className="popular_car_item">
             <div className="popular_car_item_image car_image5">
-              {" "}
               {type === "SoldOut" ? (
                 <div className="sold_car_info">
                   <div>25.000$</div>

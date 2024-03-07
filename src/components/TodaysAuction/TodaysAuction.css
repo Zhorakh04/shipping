@@ -21,6 +21,7 @@
   color: #5f6c7b;
   height: 70px;
   display: flex;
+  flex-wrap: wrap;
 }
 
 .auction_sale_time_info > time {
@@ -106,6 +107,12 @@
 
   .todays_auction > div:last-child {
     width: 100%;
+  }
+  .todays_auction_info {
+    border: none;
+  }
+  .auction_item_title{
+    display: flex;
   }
 }
 

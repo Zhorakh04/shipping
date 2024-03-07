@@ -11,3 +11,8 @@
   color: var(--color2);
 }
 
+@media (max-width: 320px) {
+  .watchlist_button {
+    width: 100%;
+  }
+}

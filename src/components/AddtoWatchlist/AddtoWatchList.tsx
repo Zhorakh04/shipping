@@ -4,7 +4,7 @@ import "./AddtoWatchlist.css";
 
 const AddtoWatchlist = () => {
   return (
-    <div className="watchlist">
+    <div className="watchlist container">
       <MyButton className={"watchlist_button"}>
         <Star /> Add to Watchlist
       </MyButton>{" "}
