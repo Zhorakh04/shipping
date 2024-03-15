@@ -11,11 +11,6 @@ interface IProp {
 
 const PopularCars = ({ type }: IProp) => {
 
-  // const carsClass = classNames({
-  //   SoldOut:type === 'SoldOut',
-  //   SoldOut
-  // })
-
   return (
     <div>
       <h3 className="h3Font">

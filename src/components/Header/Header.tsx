@@ -22,6 +22,13 @@ const Header = ({ ...props }: any) => {
     } else {
       document.body.style.overflowY = "auto";
     }
+    const closeSelects = () => {
+      setActive(false);
+    };
+
+    document.addEventListener("click", closeSelects);
+
+    return () => document.removeEventListener("click", closeSelects);
   }, [active]);
 
   useEffect(() => {
@@ -39,7 +46,11 @@ const Header = ({ ...props }: any) => {
     <header className={`header ${path[path.length - 1]}`}>
       <div className="container">
         <Logo />
-        <nav>
+        <nav
+          onClick={(e) => {
+            e.stopPropagation();
+          }}
+        >
           {!active ? (
             <NavMenuIcon onClick={clickHandler} />
           ) : (
@@ -60,7 +71,7 @@ const Header = ({ ...props }: any) => {
               </NavLink>
             </li>
             <li>
-              <NavLink to={"/"}>Log In</NavLink>
+              <NavLink to={"/product_bid"}>Log In</NavLink>
             </li>
             <li>
               <NavLink to={"/"}>Register</NavLink>

@@ -1,6 +1,49 @@
-.bid_header {
+%flex-element-center {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  align-items: center;
+}
+
+%bgItem {
+  background-size: cover !important;
+  background-position: center !important;
+}
+
+.live_now {
+  > div:first-child {
+    @extend %flex-element-center;
+    justify-content: flex-start;
+    svg {
+      width: 34px;
+      height: 34px;
+    }
+    > h4 {
+      font-weight: 400;
+    }
+    font-size: 34px;
+    color: var(--success);
+  }
+
+  > div:not(.live_now > div:first-child) {
+    @extend %flex-element-center;
+    justify-content: space-between;
+    color: var(--color3);
+    .participants_count {
+      font-size: 24px;
+      font-weight: 400;
+    }
+  }
+}
+
+.bid_header {
+  @extend %flex-element-center;
+}
+
+.product_header {
+  margin-top: 10px;
+}
+
+.product_header.product_information {
   align-items: center;
 }
 
@@ -15,66 +58,70 @@
   font-size: 34px;
 }
 
-.upcomming_lots {
+.upcomming_lots_title {
   font-size: 24px;
   font-weight: 400;
 }
 
 .auction_layer_lot {
   display: flex;
-  justify-content: space-between;
   gap: 10px;
   .car_info_list {
     width: 100%;
+    height: 100%;
   }
 
   .auction_bid {
     background: white;
-    padding: 10px;
-    display: flex;
+    padding: 10px 20px;
+    @extend %flex-element-center;
     flex-direction: column;
-    align-items: center;
     border-radius: 16px;
-    width: 288px;
+    min-width: 288px;
+    gap: 10px;
 
-    .Bid_button {
-      width: 90%;
+    > .Bid_button {
       background: var(--color1);
       color: white;
     }
   }
 }
 
+.precent {
+  width: 162px;
+  height: 162px;
+  @extend %flex-element-center;
+}
+
 .auction_timer {
   position: relative;
-  box-shadow: 0px 4px 38px 0px #09406729;
-  padding: 20px;
+  z-index: 2;
+  box-shadow: 0 4px 38px 0 #09406729;
   border-radius: 256px;
   background: #09406733;
-
-  .auction_timer_road {
+  width: 162px;
+  height: 162px;
+  @extend %flex-element-center;
+  .timer_road {
     position: absolute;
-    width: 100%;
     height: 100%;
-    top: 0;
-    left: 0;
-    border: 1vh solid transparent;
-    border-radius: 50%;
-    background: linear-gradient(white, white) content-box no-repeat,
-      conic-gradient(rgb(255, 255, 255) 44%, 0, green) border-box;
+    width: 100%;
+    @extend %flex-element-center;
+    transform: rotate(-98deg);
   }
 }
 
 .bid_player_info {
+  position: relative;
   width: 132px;
   height: 132px;
   border-radius: 50%;
-  display: flex;
+  @extend %flex-element-center;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
   background: white;
-  box-shadow: 0px 4px 38px 0px #094067a3;
+  box-shadow: 0 4px 38px 0 #094067a3;
+  z-index: 3;
+  color: var(--color3);
 
   svg {
     width: 45px;
@@ -83,9 +130,8 @@
 }
 
 .place_a_bet {
-  display: flex;
+  @extend %flex-element-center;
   justify-content: space-between;
-  align-items: center;
   width: 100%;
 
   button {
@@ -102,5 +148,246 @@
     border-radius: 16px;
     width: 138px;
     text-align: center;
+    color: var(--color1);
+    font-weight: bold;
+  }
+}
+
+.auction_player {
+  .car_lot_information {
+    > div {
+      height: auto;
+    }
+  }
+
+  .product_information {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    .product_info_image {
+      flex: 0 0 auto;
+      max-width: 305px;
+      width: 35%;
+    }
+
+    .car_lot_information {
+      flex: 1;
+    }
+
+    .upcomming_lots {
+      flex: 1;
+    }
+  }
+}
+
+.box {
+  display: flex;
+  margin-left: 42px;
+}
+
+.box .precent svg circle {
+  fill: none;
+  stroke-width: 16px;
+  stroke: #000;
+  transform: translate(7%, 7%);
+  top: 0;
+  left: 0;
+  stroke-dasharray: 460;
+  stroke-linecap: round;
+}
+.box .precent svg circle:nth-child(1) {
+  stroke-dashoffset: 0;
+  stroke: none;
+}
+
+.box .precent svg circle:nth-child(2) {
+  stroke-dashoffset: calc(445 - (400 + 87) / 100);
+  stroke: rgba(9, 64, 103, 0.6);
+  box-shadow: 0 4px 38px 0 #09406766;
+}
+
+.previous_bid {
+  width: 100%;
+  .Bid_button {
+    border: 1px solid var(--color2);
+  }
+
+  > p {
+    margin-top: 20px;
+    text-align: center;
+    color: var(--color1);
+    font-weight: bold;
+  }
+
+  .previous_bid_player_info {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5px;
+    color: var(--color3);
+    font-size: 12px;
+
+    > div {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      padding: 5px 33px 5px 5px;
+      border-radius: 10px;
+    }
+
+    img {
+      width: 32px;
+      height: 32px;
+      border-radius: 7px;
+    }
+  }
+}
+
+.player_bet {
+  color: var(--color1);
+  font-weight: bold;
+}
+
+.previous_bid {
+  > .title__Info__Field {
+    color: white;
+  }
+}
+
+.upcomming_lots {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-top: 10px;
+}
+
+.upcomming_lots_item {
+  display: flex;
+  border-radius: 16px;
+
+  .upcomming_item_image {
+    min-width: 119px;
+    height: 119px;
+    @extend %bgItem;
+    border-radius: 16px 0 0 16px;
+    position: relative;
+
+    .upcomming_item_btn {
+      position: absolute;
+      bottom: 0;
+      height: 19px;
+      font-size: 12px;
+      padding: 0;
+      background-color: var(--color1);
+      color: white;
+    }
+  }
+
+  .upcomming_lots_item_info {
+    padding: 5px;
+    > p:not(.upcomming_lots_item_title) {
+      font-size: 14px;
+      color: var(--color3);
+    }
+  }
+  .upcomming_lots_item_title {
+    font-size: 16px;
+    font-weight: bold;
+    color: var(--color1);
+  }
+}
+
+.previous_bid_player_img {
+  width: 32px;
+  height: 32px;
+  @extend %bgItem;
+  border-radius: 5px;
+}
+
+@media (max-width: 1010px) {
+  .upcomming_lots_title {
+    display: none;
+  }
+}
+@media (max-width: 769px) {
+  .car_name {
+    font-size: 24px;
+  }
+  .bid_header_lot > p {
+    font-size: 20px;
+  }
+  .product_header.product_information {
+    flex-direction: column-reverse;
+    align-items: flex-start;
+  }
+  .auction_player .product_information {
+    .product_info_image {
+      min-width: 100%;
+    }
+    .upcomming_lots {
+      display: none;
+    }
+  }
+  .auction_player .product_info_image {
+    max-height: fit-content;
+    .product_info_main_img {
+      max-height: 650px;
+      padding-top: calc(20% + 30vw);
+    }
+    .product_info_images {
+      grid-template-columns: repeat(5, minmax(250px, 1fr));
+      img {
+        max-height: 150px;
+        min-height: 150px;
+      }
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .auction_player .auction_layer_lot {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 320px) {
+  .live_now {
+    > div:first-child {
+      > h4 {
+        font-size: 20px;
+      }
+      font-size: 24px;
+    }
+    .participants_count {
+      font-size: 14px;
+    }
+  }
+  .live_now > div:not(.live_now > div:first-child) .participants_count {
+    font-size: 14px;
+  }
+  .auction_layer_lot .car_info_list {
+    display: none;
+  }
+  .car_name {
+    font-size: 16px;
+  }
+  .bid_header_lot {
+    display: none;
+  }
+  .auction_player .product_info_image {
+    .product_info_main_img {
+      display: none;
+    }
+    .car_info_list {
+      display: none;
+    }
+
+    .product_info_images {
+      grid-template-columns: repeat(5, minmax(123px, 1fr));
+      img {
+        max-height: 74px;
+        min-height: 74px;
+      }
+    }
   }
 }

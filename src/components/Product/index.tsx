@@ -4,12 +4,11 @@ import Image2 from "../../assets/productItemImage2.png";
 import Image3 from "../../assets/productitemImage3.png";
 import Image4 from "../../assets/productItemImage4.png";
 import "./ProductItem.css";
-import ImageLoadIcon from "../Ui/Icons/ImageLoadIcon";
-import PdfIcon from "../Ui/Icons/PdfIcon";
 import { useState } from "react";
 import BidInfo from "./BidInformation/BidInfo";
 import CarInfoList from "./CarInfoList/CarInfoList";
 import FlagGeorgia from "../Ui/Icons/FlagGeorgia";
+import Files from "./Files/Files";
 
 const headerInfo = [
   { infoType: "Lot", productInfo: "12345678" },
@@ -31,7 +30,7 @@ const ProductItem = () => {
         onChange={onChange}
         productIsActive={active}
       />
-      <div className="product_inforamtion">
+      <div className="product_information">
         <div className="product_info_image">
           <div className="product_info_images">
             <div className="product_info_main_img div__Image"></div>
@@ -46,7 +45,7 @@ const ProductItem = () => {
                 src={Image4}
                 alt="productimage"
                 width="100%"
-                height={"100%"}
+                height="100%"
               />
             </div>
             {active && <img src={Image2} alt="productimage" />}
@@ -62,31 +61,18 @@ const ProductItem = () => {
                 More Information
               </div>
             </div>
-            <CarInfoList headerInfo={headerInfo} active={active} />
+            <CarInfoList headerInfo={headerInfo} active={active}/>
           </div>
-          <div className="filtes">
-            <div className="title__Info__Field shadow__Item">Filtes</div>
-            <div className="filtes_list">
-              <div className="filtes_list_item shadow__Item">
-                <p>Open</p>
-              </div>
-              <div className="filtes_list_item shadow__Item">
-                <ImageLoadIcon />
-              </div>
-              <div className="filtes_list_item shadow__Item">
-                <PdfIcon />
-              </div>
-            </div>
-          </div>
+          <Files />
         </div>
         <div className="bid_Information">
-          <BidInfo active={active} />
+          <BidInfo active={active}/>
           <div className="sale_Information">
             <div className="title__Info__Field">Sale Inforamation</div>
             <div className="car_info_item">
               <p>Sale Inforamation</p>
               <p>
-                <FlagGeorgia /> Georgia
+                <FlagGeorgia/> Georgia
               </p>
             </div>
             <div className="car_info_item shadow__Item">

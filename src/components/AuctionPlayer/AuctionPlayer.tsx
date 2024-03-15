@@ -1,23 +1,49 @@
 import "./AuctionPlayer.scss";
-import { Image1, Image2, Image3, Image4 } from "../../assets/index";
+import {
+  Image1,
+  Image2,
+  Image3,
+  Image4,
+  bidPlayer1,
+  bidPlayer2,
+  upcomingCars2,
+  upcomingCars3,
+  upcomingCars4,
+} from "../../assets/index";
 import CarInfoList from "../Product/CarInfoList/CarInfoList";
-import PdfIcon from "../Ui/Icons/PdfIcon";
-import ImageLoadIcon from "../Ui/Icons/ImageLoadIcon";
-import FlagGeorgia from "../Ui/Icons/FlagGeorgia";
 import MyButton from "../Ui/customUi/MyButton/MyButton";
+import FlagUAE from "../Ui/Icons/FlagUAE";
+import FlagArm from "../Ui/Icons/FlagArm";
+import VolumeIcon from "../Ui/Icons/VolumeIcon";
+import FlagGeorgia from "../Ui/Icons/FlagGeorgia";
+import Files from "../Product/Files/Files";
+import AuctionBidTimer from "./AuctionBidTimer/AuctionBidTimer";
 
 const AuctionPlayer = () => {
   return (
-    <div className="container">
-      <div className="product_header bid_header">
-        <div className="bid_header_lot">
-          <h5>Lot:</h5>
-          <p>12345678</p>
+    <div className="auction_player">
+      <div className="container live_now">
+        <div>
+          <FlagGeorgia />
+          <h4>Live Now</h4>
         </div>
-        <h4 className="car_name">2014 - BMW 3er Touring:</h4>
-        <h4 className="upcomming_lots">Upcoming Lots</h4>
+        <div>
+          <h5 className="participants_count">106 Participants</h5>
+          <p>65 Left</p>
+        </div>
       </div>
-      <div className="product_inforamtion">
+      <div className="container">
+        <div className="product_header product_information">
+          <div className="bid_header_lot">
+            <h5>Lot:</h5>
+            <p>12345678</p>
+          </div>
+          <h4 className="car_name">2014 - BMW 3er Touring</h4>
+          <h4 className="upcomming_lots_title">Upcoming Lots</h4>
+        </div>
+      </div>
+
+      <div className="product_information list container">
         <div className="product_info_image">
           <div className="product_info_images">
             <div className="product_info_main_img div__Image"></div>
@@ -28,66 +54,132 @@ const AuctionPlayer = () => {
               <div className="product_image_fone">
                 <p>+7 photos</p>
               </div>
-              <img
-                src={Image4}
-                alt="productimage"
-                width="100%"
-                height={"100%"}
-              />
+              <img src={Image4} alt="productimage" width="100%" height="100%" />
             </div>
           </div>
         </div>
         <div className="car_lot_information">
           <div>
             <div className="auction_layer_lot">
-              <CarInfoList />
+              <CarInfoList>
+                <div className="car_info_item shadow__Item">
+                  <p>Vin:</p>
+                  <p>1GNCS18Z3M0115561</p>
+                </div>
+              </CarInfoList>
               <div className="auction_bid">
-                <div className="auction_timer">
-                  <div className="bid_player_info">
-                    <FlagGeorgia />
-                    <p>UAE</p>
-                    <p className="player_bet">$1700</p>
-                    <p className="player_bet">Bid!</p>
-                  </div>
-                </div>
-                <div className="place_a_bet">
-                  <MyButton className="shadow__Item">-</MyButton>
-                  <p className="place_a_bet_money shadow__Item">$1800</p>
-                  <MyButton className="shadow__Item">+</MyButton>
-                </div>
-                <MyButton className="Bid_button">Bid</MyButton>
-                <div>
+                <AuctionBidTimer />
+                <div className="previous_bid">
                   <div className="title__Info__Field">Previous Bids</div>
-                  <div>
-                    <img src="" alt="" />
-                    <div>
-                      <FlagGeorgia />
-                      <p></p>
+                  <div className="previous_bid_player_info">
+                    <div className="shadow__Item">
+                      <div
+                        className="previous_bid_player_img"
+                        style={{ background: `url(${bidPlayer1})` }}
+                      ></div>
+                      <div>
+                        <p>
+                          <FlagArm /> Arm
+                        </p>
+                        <p>
+                          <b>1.600$</b>
+                        </p>
+                      </div>
+                    </div>
+                    <div className="shadow__Item">
+                      <div
+                        className="previous_bid_player_img"
+                        style={{ background: `url(${bidPlayer2})` }}
+                      ></div>
+                      <div>
+                        <p>
+                          <FlagUAE /> Arm
+                        </p>
+                        <p>
+                          <b>1.650$</b>
+                        </p>
+                      </div>
                     </div>
                   </div>
-                  <div>
-                    <img src="" alt="" />
-                    <div>
-                      <FlagGeorgia />
-                      <p></p>
-                    </div>
-                  </div>
+                  <p>3400$</p>
+                  <MyButton className="Bid_button btn2">Buy It Now</MyButton>
                 </div>
               </div>
             </div>
           </div>
-          <div className="filtes">
-            <div className="title__Info__Field shadow__Item">Filtes</div>
-            <div className="filtes_list">
-              <div className="filtes_list_item shadow__Item">
-                <p>Open</p>
-              </div>
-              <div className="filtes_list_item shadow__Item">
-                <ImageLoadIcon />
-              </div>
-              <div className="filtes_list_item shadow__Item">
-                <PdfIcon />
-              </div>
+          <Files />
+        </div>
+        <div className="upcomming_lots">
+          <div className="upcomming_lots_item shadow__Item">
+            <div
+              style={{
+                background: `url(${Image1})`,
+              }}
+              className="upcomming_item_image"
+            >
+              <MyButton className="upcomming_item_btn ">Next</MyButton>
+            </div>
+
+            <div className="upcomming_lots_item_info ">
+              <p className="upcomming_lots_item_title">
+                2014 - BMW 3er Touring
+              </p>
+              <p>Lot: 12345678</p>
+              <p>Location: Georgia</p>
+              <p>Current Bid: $3.400</p>
+            </div>
+          </div>
+          <div className="upcomming_lots_item shadow__Item">
+            <div
+              style={{
+                background: `url(${upcomingCars2})`,
+              }}
+              className="upcomming_item_image"
+            >
+              <MyButton className="upcomming_item_btn ">Next</MyButton>
+            </div>
+
+            <div className="upcomming_lots_item_info ">
+              <p className="upcomming_lots_item_title">
+                2013 - Mercedes Benz GLC
+              </p>
+              <p>Lot: 12345678</p>
+              <p>Location: Georgia</p>
+              <p>Current Bid: $3.400</p>
+            </div>
+          </div>
+          <div className="upcomming_lots_item shadow__Item">
+            <div
+              style={{
+                background: `url(${upcomingCars3})`,
+              }}
+              className="upcomming_item_image"
+            >
+              <MyButton className="upcomming_item_btn ">Next</MyButton>
+            </div>
+
+            <div className="upcomming_lots_item_info ">
+              <p className="upcomming_lots_item_title">2019 - Toyota Corolla</p>
+              <p>Lot: 12345678</p>
+              <p>Location: Georgia</p>
+              <p>Current Bid: $3.400</p>
+            </div>
+          </div>
+          <div className="upcomming_lots_item shadow__Item">
+            <div
+              style={{
+                background: `url(${upcomingCars4})`,
+              }}
+              className="upcomming_item_image"
+            >
+              <MyButton className="upcomming_item_btn ">Next</MyButton>
+            </div>
+
+            <div className="upcomming_lots_item_info ">
+              <p className="upcomming_lots_item_title">2019 - BMW 1er Lim</p>
+              <p>Lot: 12345678</p>
+              <p>Location: Georgia</p>
+              <p>Current Bid: $3.400</p>
             </div>
           </div>
         </div>

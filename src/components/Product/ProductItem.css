@@ -1,4 +1,4 @@
-.product_inforamtion {
+.product_information {
   display: grid;
   grid-template-columns: minmax(200px, 304px) minmax(290px, auto) minmax(
       220px,
@@ -14,21 +14,20 @@
 .product_info_image {
   overflow: hidden;
   margin-top: 10px;
-  height: 500px;
+  max-height: 500px;
 }
 
 .product_info_images {
   display: grid;
   grid-template-rows: 1fr;
-  grid-template-columns: repeat(auto-fit, minmax(148px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(135px, 1fr));
   gap: 7px;
 }
 .product_info_main_img {
   width: 100%;
   padding-top: 100%;
-  background: url("../../assets/productItemImage1.jpeg");
+  background: url("../../assets/productItemImage1.jpeg") no-repeat center;
   background-size: cover;
-  background-position: center;
 }
 .product_info_images > img {
   width: 100%;
@@ -87,24 +86,6 @@
 .info_type {
   background-color: white;
   width: 50%;
-}
-
-.filtes_list {
-  display: flex;
-  gap: 10px;
-  margin-top: 10px;
-}
-
-.filtes > .title__Info__Field {
-  color: white;
-}
-
-.filtes_list_item {
-  width: 80px;
-  height: 80px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .bid_Information {
@@ -207,14 +188,14 @@
   .view_more {
     display: block;
   }
-  .product_inforamtion {
+  .product_information {
     grid-template-columns: auto;
     position: relative;
   }
   .bid_Information {
     height: auto;
   }
-  .car_lot_information > .filtes {
+  .car_lot_information > .files {
     height: auto;
   }
   .car_lot_information > div {
@@ -234,7 +215,7 @@
   }
   .product_info_main_img {
     width: 100vw;
-    padding-top: 50%;
+    padding-top: calc(20% + 20vw);
   }
   .product_image_fone {
     display: none;

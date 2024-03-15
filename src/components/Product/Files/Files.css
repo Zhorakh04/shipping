@@ -1,0 +1,17 @@
+.files_list {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.files > .title__Info__Field {
+    color: white;
+}
+
+.files_list_item {
+    width: 80px;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

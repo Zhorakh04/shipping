@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import FlagGeorgia from "../../Ui/Icons/FlagGeorgia";
 
-const CarInfoList = ({ active, headerInfo }: any) => {
+const CarInfoList = ({ active, headerInfo ,...props }: any) => {
   const [viewMore, setViewMore] = useState<boolean>(false);
 
   const handleView = () => {
@@ -68,6 +68,7 @@ const CarInfoList = ({ active, headerInfo }: any) => {
             <p>Keys:</p>
             <p>Yes</p>
           </div>
+          {props.children}
         </>
       )}
       <div onClick={handleView} className="view_more shadow__Item">
