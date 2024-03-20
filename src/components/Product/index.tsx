@@ -7,7 +7,7 @@ import "./ProductItem.css";
 import { useState } from "react";
 import BidInfo from "./BidInformation/BidInfo";
 import CarInfoList from "./CarInfoList/CarInfoList";
-import FlagGeorgia from "../Ui/Icons/FlagGeorgia";
+import FlagGeorgia from "../../assets/Icons/FlagGeorgia";
 import Files from "./Files/Files";
 
 const headerInfo = [
@@ -32,23 +32,25 @@ const ProductItem = () => {
       />
       <div className="product_information">
         <div className="product_info_image">
-          <div className="product_info_images">
+          <div>
             <div className="product_info_main_img div__Image"></div>
-            <img src={Image1} alt="productimage" />
-            <img src={Image2} alt="productimage" />
-            <img src={Image3} alt="productimage" />
-            <div style={{ position: "relative" }}>
-              <div className="product_image_fone">
-                <p>+7 photos</p>
+            <div className="product_info_images">
+              <img src={Image1} alt="productimage" />
+              <img src={Image2} alt="productimage" />
+              <img src={Image3} alt="productimage" />
+              <div style={{ position: "relative" }}>
+                <div className="product_image_fone">
+                  <p>+7 photos</p>
+                </div>
+                <img
+                  src={Image4}
+                  alt="productimage"
+                  width="100%"
+                  height="100%"
+                />
               </div>
-              <img
-                src={Image4}
-                alt="productimage"
-                width="100%"
-                height="100%"
-              />
+              {active && <img src={Image2} alt="productimage" />}
             </div>
-            {active && <img src={Image2} alt="productimage" />}
           </div>
         </div>
         <div className="car_lot_information">
@@ -61,18 +63,18 @@ const ProductItem = () => {
                 More Information
               </div>
             </div>
-            <CarInfoList headerInfo={headerInfo} active={active}/>
+            <CarInfoList headerInfo={headerInfo} active={active} />
           </div>
           <Files />
         </div>
         <div className="bid_Information">
-          <BidInfo active={active}/>
+          <BidInfo active={active} />
           <div className="sale_Information">
             <div className="title__Info__Field">Sale Inforamation</div>
-            <div className="car_info_item">
+            <div className="car_info_item shadow__Item">
               <p>Sale Inforamation</p>
               <p>
-                <FlagGeorgia/> Georgia
+                <FlagGeorgia /> Georgia
               </p>
             </div>
             <div className="car_info_item shadow__Item">

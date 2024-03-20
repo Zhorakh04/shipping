@@ -1,4 +1,4 @@
-import Star from "../Ui/Icons/Star";
+import Star from "../../assets/Icons/Star";
 import MyButton from "../Ui/customUi/MyButton/MyButton";
 import "./AddtoWatchlist.css";
 

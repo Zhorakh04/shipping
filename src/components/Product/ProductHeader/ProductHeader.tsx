@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState } from "react";
-import FlagGeorgia from "../../Ui/Icons/FlagGeorgia";
 import "./ProductHeader.css";
-import MoreIcon from "../../Ui/Icons/MoreIcon";
+import MoreIcon from "../../../assets/Icons/MoreIcon";
 import ProductHeaderLinks from "../ProductHeaderLinks/ProductHeaderLinks";
 import classNames from "classnames";
 
@@ -10,13 +9,13 @@ export type IProductHeaderInfo = {
   productInfo: string;
 };
 
-interface IProdcutHeader {
+interface IProductHeader {
   info: IProductHeaderInfo[];
   onChange: (e: boolean) => void;
   productIsActive: boolean;
 }
 
-const ProductHeader = ({ info, onChange, productIsActive }: IProdcutHeader) => {
+const ProductHeader = ({ info, onChange, productIsActive }: IProductHeader) => {
   const [active, setActive] = useState<boolean>(false);
 
   const ref = useRef<any>();
@@ -49,10 +48,7 @@ const ProductHeader = ({ info, onChange, productIsActive }: IProdcutHeader) => {
         <h3 className="product_title">2014 - BMW 3er Touring</h3>
         <MoreIcon onClick={viewMore} />
       </div>
-      <div
-        className={headerClass}
-        ref={ref}
-      >
+      <div className={headerClass} ref={ref}>
         {!productIsActive && <ProductHeaderLinks info={info} />}
       </div>
     </div>

@@ -1,6 +1,5 @@
-import { useState } from "react";
-import LeftSvg from "../Ui/Icons/LeftSvg";
-import RightSvg from "../Ui/Icons/RightSvg";
+import LeftSvg from "../../assets/Icons/LeftSvg";
+import RightSvg from "../../assets/Icons/RightSvg";
 import MyButton from "../Ui/customUi/MyButton/MyButton";
 import "./Breadcrumbnavigation.css";
 

@@ -1,5 +1,5 @@
-import NextButton from "../Ui/Icons/NextButton";
-import PrevButton from "../Ui/Icons/PrevButton";
+import NextButton from "../../assets/Icons/NextButton";
+import PrevButton from "../../assets/Icons/PrevButton";
 import "./HomePageSlider.css";
 
 const HomePageSlider = () => {

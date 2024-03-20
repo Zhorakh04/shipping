@@ -1,7 +1,5 @@
 import "./Footer.css";
-import Facebook from "../Ui/Icons/Facebook";
-import LInkedIn from "../Ui/Icons/LInkedIn";
-import Instagram from "../Ui/Icons/Instagram";
+import { LinkedInIcon, FacebookIcon, InstagramIcon } from "../../assets/Icons";
 import { useLocation } from "react-router-dom";
 
 const Footer = () => {
@@ -12,13 +10,13 @@ const Footer = () => {
     <footer className={path[path.length - 1]}>
       <div className="footer_icons">
         <div>
-          <Facebook />
+          <FacebookIcon />
         </div>
         <div>
-          <Instagram />
+          <InstagramIcon />
         </div>
         <div>
-          <LInkedIn />
+          <LinkedInIcon />
         </div>
       </div>
       <p>Terms and Conditions</p>

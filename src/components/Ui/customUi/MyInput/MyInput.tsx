@@ -17,7 +17,7 @@ const MyInput: FC<IMyInput> = ({ classname, type, placeholder, value ,onChange})
   return (
     <input
       type={type ? type : "text"}
-      className={classnameStyles.join("")}
+      className={classnameStyles.join(" ")}
       placeholder={placeholder}
       value={value}
       onChange={onChange}

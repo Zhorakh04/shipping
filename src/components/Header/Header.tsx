@@ -1,11 +1,11 @@
 import { NavLink, useLocation } from "react-router-dom";
 import "./Header.css";
-import Logo from "../Ui/Icons/Logo";
-import FlagUS from "../Ui/Icons/FlagUS";
-import SelectSvg from "../Ui/Icons/SelectSvg";
+import Logo from "../../assets/Icons/Logo";
+import FlagUS from "../../assets/Icons/FlagUS";
+import SelectSvg from "../../assets/Icons/SelectSvg";
 import { useCallback, useEffect, useState } from "react";
-import CloseIcon from "../Ui/Icons/CloseIcon";
-import NavMenuIcon from "../Ui/Icons/NavMenuIcon";
+import CloseIcon from "../../assets/Icons/CloseIcon";
+import NavMenuIcon from "../../assets/Icons/NavMenuIcon";
 
 const Header = ({ ...props }: any) => {
   const [active, setActive] = useState(false);

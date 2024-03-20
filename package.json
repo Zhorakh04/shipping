@@ -41,9 +41,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "@types/node-sass": "^4.11.7",
-    "sass": "^1.71.1"
   }
 }

@@ -1,21 +1,17 @@
-import NextButton from "../Ui/Icons/NextButton";
-import PrevButton from "../Ui/Icons/PrevButton";
+import NextButton from "../../assets/Icons/NextButton";
+import PrevButton from "../../assets/Icons/PrevButton";
 import SoldOutIcon from "../../assets/soldCar.png";
 
 import "./PopularCars.css";
-import classNames from "classnames";
 
 interface IProp {
   type?: string;
 }
 
 const PopularCars = ({ type }: IProp) => {
-
   return (
     <div>
-      <h3 className="h3Font">
-        {type === "SoldOut" ? "Sold Out" : "SoldOut"}
-      </h3>
+      <h3 className="h3Font">{type === "SoldOut" ? "Sold Out" : "SoldOut"}</h3>
       <div className="popular_cars">
         <div className="popular_cars_nextprevBtn">
           <PrevButton classname="prev" color="#094067" />

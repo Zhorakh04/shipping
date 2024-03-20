@@ -1,5 +1,5 @@
 import "./TodaysAuction.css";
-import FlagGeorgia from "../Ui/Icons/FlagGeorgia";
+import FlagGeorgia from "../../assets/Icons/FlagGeorgia";
 
 const TodaysAuction = () => {
   return (

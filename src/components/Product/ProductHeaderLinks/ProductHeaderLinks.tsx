@@ -1,6 +1,6 @@
 import React, { memo } from "react";
 import { IProductHeaderInfo } from "../ProductHeader/ProductHeader";
-import FlagGeorgia from "../../Ui/Icons/FlagGeorgia";
+import FlagGeorgia from "../../../assets/Icons/FlagGeorgia";
 
 type IProp = {
   info: IProductHeaderInfo[];

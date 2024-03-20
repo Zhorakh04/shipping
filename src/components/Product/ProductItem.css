@@ -18,6 +18,7 @@
 }
 
 .product_info_images {
+  margin-top: 7px;
   display: grid;
   grid-template-rows: 1fr;
   grid-template-columns: repeat(auto-fit, minmax(135px, 1fr));
@@ -38,7 +39,7 @@
   margin-top: 10px;
 }
 .car_lot_information > div {
-  height: 420px;
+  margin-top: 7px;
 }
 .car_info_item {
   height: 30px;
@@ -195,11 +196,7 @@
   .bid_Information {
     height: auto;
   }
-  .car_lot_information > .files {
-    height: auto;
-  }
   .car_lot_information > div {
-    height: auto;
     margin-bottom: 10px;
   }
   .bid_Information_List {
@@ -212,10 +209,11 @@
   }
   .product_info_images {
     grid-template-columns: repeat(5, minmax(148px, 1fr));
+    overflow: scroll;
   }
+
   .product_info_main_img {
-    width: 100vw;
-    padding-top: calc(20% + 20vw);
+    padding-top: calc(30% + 25vw);
   }
   .product_image_fone {
     display: none;
@@ -229,5 +227,8 @@
 @media (max-width: 320px) {
   .title__Info__Field {
     font-size: 0.925rem;
+  }
+  .product_info_main_img {
+    width: calc(100vw - 32px);
   }
 }

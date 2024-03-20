@@ -13,3 +13,9 @@
   font-size: 16px;
   color: #5f6c7b20;
 }
+
+.MyInput::-webkit-outer-spin-button,
+.MyInput::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}

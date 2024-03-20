@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import FlagGeorgia from "../../Ui/Icons/FlagGeorgia";
+import FlagGeorgia from "../../../assets/Icons/FlagGeorgia";
 
-const CarInfoList = ({ active, headerInfo ,...props }: any) => {
+const CarInfoList = ({ active, headerInfo, ...props }: any) => {
   const [viewMore, setViewMore] = useState<boolean>(false);
 
   const handleView = () => {
