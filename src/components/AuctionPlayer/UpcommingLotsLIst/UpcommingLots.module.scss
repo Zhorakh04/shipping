@@ -1,0 +1,82 @@
+@import "../../../styles/variables.scss";
+
+%bgItem {
+  background-size: cover !important;
+  background-position: center !important;
+}
+
+.upcomming_lots {
+  &_title {
+    display: none;
+    text-align: center;
+    color: $color1;
+    margin-top: 11px;
+    font-size: 24px;
+    font-weight: 400;
+    border-radius: 7px;
+    padding: 5px;
+    width: 100%;
+  }
+
+  &_item {
+    display: flex;
+    border-radius: 16px;
+    min-width: 280px;
+
+    &_image {
+      min-width: 119px;
+      height: 119px;
+      @extend %bgItem;
+      border-radius: 16px 0 0 16px;
+      position: relative;
+    }
+
+    &_btn {
+      position: absolute;
+      bottom: 0;
+      height: 19px;
+      font-size: 12px;
+      padding: 0;
+      background-color: var(--color1);
+      color: white;
+    }
+
+    &_info {
+      padding: 5px;
+
+      > p:not(.upcomming_lots_item_title) {
+        font-size: 14px;
+        color: var(--color3);
+      }
+    }
+
+    &_title {
+      font-size: 16px;
+      font-weight: bold;
+      color: var(--color1);
+      width: 123px;
+    }
+  }
+
+  @media (max-width: 1162px) {
+    &_title {
+      display: block;
+    }
+  }
+}
+
+.upcomming_lots_list {
+  flex: 1;
+  max-width: 288px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  @media (max-width: 1167px) {
+    display: none;
+  }
+
+  .upcomming_lots_title {
+    display: none;
+  }
+}

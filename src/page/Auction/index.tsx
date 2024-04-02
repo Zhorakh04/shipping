@@ -3,9 +3,9 @@ import { BreadcrumbNavigation, AuctionPlayer } from "../../components";
 
 const Auction = () => {
   return (
-    <div>
-        <BreadcrumbNavigation />
-        <AuctionPlayer />
+    <div className="auction">
+      <BreadcrumbNavigation />
+      <AuctionPlayer />
     </div>
   );
 };

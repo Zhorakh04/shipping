@@ -1,0 +1,24 @@
+.view_more {
+  display: none;
+  text-align: center;
+  padding: 20px;
+  border-radius: 16px;
+  z-index: 1;
+
+  @media (max-width: 769px) {
+    display: block;
+  }
+}
+
+.auction_player {
+  &.car_info_list {
+    gap: 12px;
+    @media (max-width: 769px) {
+      gap: 16px;
+    }
+  }
+
+  .view_more {
+    display: none;
+  }
+}

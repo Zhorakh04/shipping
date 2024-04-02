@@ -1,5 +1,5 @@
 import React, { useMemo, useState } from "react";
-import { FlagUAE, VolumeIcon } from "../../../assets/Icons";
+import { FlagUAE, VolumeIcon } from "../../../assets";
 import MyButton from "../../Ui/customUi/MyButton/MyButton";
 import MyInput from "../../Ui/customUi/MyInput/MyInput";
 

@@ -1,70 +1,93 @@
+@import "../../../styles/variables.scss";
+@import "../AuctionPlayer.module.scss";
+
 .box {
   display: flex;
   margin-left: 42px;
-}
 
-.box .precent svg circle {
-  fill: none;
-  stroke-width: 16px;
-  stroke: #000;
-  transform: translate(7%, 7%);
-  top: 0;
-  left: 0;
-  stroke-dasharray: 460;
-  stroke-linecap: round;
-  transition: 1s linear;
-}
-.box .precent svg circle:nth-child(1) {
-  stroke-dashoffset: 0;
-  stroke: none;
-}
-
-.box .precent svg circle:nth-child(2) {
-  stroke: rgba(9, 64, 103, 0.6);
-  box-shadow: 0 4px 38px 0 #09406766;
-}
-
-.previous_bid {
-  width: 100%;
-  .Bid_button {
-    border: 1px solid var(--color2);
-  }
-
-  > p {
-    margin-top: 20px;
-    text-align: center;
-    color: var(--color1);
-    font-weight: bold;
-  }
-
-  .previous_bid_player_info {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 5px;
-    color: var(--color3);
-    font-size: 12px;
-
-    > div {
-      display: flex;
-      align-items: center;
-      gap: 4px;
-      padding: 5px 33px 5px 5px;
-      border-radius: 10px;
+  .precent {
+    svg circle {
+      fill: none;
+      stroke-width: 16px;
+      stroke: #000;
+      transform: translate(7%, 7%);
+      top: 0;
+      left: 0;
+      stroke-dasharray: 460;
+      stroke-linecap: round;
+      transition: 1s linear;
     }
 
-    img {
-      width: 32px;
-      height: 32px;
-      border-radius: 7px;
+    svg circle:nth-child(1) {
+      stroke-dashoffset: 0;
+      stroke: none;
+    }
+
+    svg circle:nth-child(2) {
+      stroke: rgba(9, 64, 103, 0.6);
+      box-shadow: 0 4px 38px 0 #09406766;
     }
   }
 }
-
 .player_bet {
   color: var(--color1);
   font-weight: bold;
+  font-size: 16px;
 }
 
 .place_a_bet_money {
   border: none;
+}
+
+.place_a_bet {
+  @extend %flex-element-space_between;
+  width: 100%;
+
+  button {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    color: white;
+    background: $color1;
+    @media (max-width: 769px) {
+      background: #09406765;
+      box-shadow: 0px 4px 38px 0px #0940671f;
+    }
+  }
+
+  &_money {
+    background: white;
+    padding: 10px;
+    border-radius: 16px;
+    width: 138px;
+    text-align: center;
+    color: $color1;
+    font-weight: bold;
+    height: 44px;
+  }
+}
+
+.Bid_button {
+  background: $color1;
+  color: white;
+  margin-top: -1px;
+}
+
+.auction_timer {
+  position: relative;
+  z-index: 2;
+  box-shadow: 0 4px 38px 0 #09406729;
+  border-radius: 256px;
+  background: #09406733;
+  width: 162px;
+  height: 162px;
+  @extend %flex-element-center;
+
+  .timer_road {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    transform: rotate(-98deg);
+    @extend %flex-element-center;
+  }
 }

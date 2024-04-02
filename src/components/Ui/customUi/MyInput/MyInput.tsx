@@ -1,5 +1,5 @@
-import React, { FC } from "react";
-import styles from "./MyInput.module.css";
+import  { FC } from "react";
+import styles from "./MyInput.module.scss";
 
 interface IMyInput {
   placeholder?: string;

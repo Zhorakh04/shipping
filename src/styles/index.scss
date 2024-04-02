@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
+@import "./variables.scss";
 
 * {
   padding: 0;
@@ -45,7 +46,7 @@ select {
 
 .h3Font {
   margin: 40px 0 20px 0;
-  color: #094067;
+  color: $color1;
   font-weight: 400;
   font-size: 48px;
   font-style: "Roboto";
@@ -71,11 +72,7 @@ time {
   left: 1%;
 }
 
-.NavMenuIcon {
-  display: none;
-  position: relative;
-  z-index: 1000;
-}
+
 
 .Image {
   background-repeat: no-repeat;
@@ -84,7 +81,7 @@ time {
 }
 
 .shadow__Item {
-  box-shadow: var(--blur1);
+  box-shadow: $blur1;
   z-index: 1;
 }
 
@@ -95,20 +92,20 @@ time {
   justify-content: space-between;
 }
 .product {
-  background: #3da9fc;
+  background: $color2;
 }
 
 .btn1 {
   width: 100%;
   height: 50px;
-  background-color: #3da9fcb2;
+  background-color: $color2;
   color: white;
 }
 
 .btn2 {
   background-color: white;
-  border: 1px solid var(--color2);
-  color: var(--color2);
+  border: 1px solid $color2;
+  color: $color2;
   height: 50px;
 }
 

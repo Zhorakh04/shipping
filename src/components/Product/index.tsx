@@ -1,14 +1,11 @@
-import { ProductHeader } from "../index";
-import Image1 from "../../assets/productItemImage1.jpeg";
-import Image2 from "../../assets/productItemImage2.png";
-import Image3 from "../../assets/productitemImage3.png";
-import Image4 from "../../assets/productItemImage4.png";
-import "./ProductItem.css";
 import { useState } from "react";
-import BidInfo from "./BidInformation/BidInfo";
-import CarInfoList from "./CarInfoList/CarInfoList";
+import { ProductHeader } from "../index";
+import { Image1, Image2, Image3, Image4 } from "../../assets/";
+import styles from "./ProductItem.module.scss";
+import BidInfo from "./BidInformation";
+import CarInfoList from "./CarInfoList";
 import FlagGeorgia from "../../assets/Icons/FlagGeorgia";
-import Files from "./Files/Files";
+import Files from "./Files/";
 
 const headerInfo = [
   { infoType: "Lot", productInfo: "12345678" },
@@ -30,16 +27,33 @@ const ProductItem = () => {
         onChange={onChange}
         productIsActive={active}
       />
-      <div className="product_information">
-        <div className="product_info_image">
+      <div className={styles.product_info}>
+        <div className={styles.product_info_image}>
           <div>
-            <div className="product_info_main_img div__Image"></div>
-            <div className="product_info_images">
-              <img src={Image1} alt="productimage" />
-              <img src={Image2} alt="productimage" />
-              <img src={Image3} alt="productimage" />
-              <div style={{ position: "relative" }}>
-                <div className="product_image_fone">
+            <div
+              className={[styles.product_info_main_img, "div__Image"].join(" ")}
+            ></div>
+            <div className={styles.product_info_images_list}>
+              <img
+                className={styles.product_info_images_list_item}
+                src={Image1}
+                alt="productimage"
+              />
+              <img
+                className={styles.product_info_images_list_item}
+                src={Image2}
+                alt="productimage"
+              />
+              <img
+                className={styles.product_info_images_list_item}
+                src={Image3}
+                alt="productimage"
+              />
+              <div
+                className={styles.product_info_images_list_item}
+                style={{ position: "relative" }}
+              >
+                <div className={styles.product_image_fone}>
                   <p>+7 photos</p>
                 </div>
                 <img
@@ -53,13 +67,25 @@ const ProductItem = () => {
             </div>
           </div>
         </div>
-        <div className="car_lot_information">
+        <div className={styles.car_lot_information}>
           <div>
-            <div className="info_types">
-              <div className="title__Info__Field info_type active">
+            <div className={styles.info_types}>
+              <div
+                className={[
+                  styles.title__Info__Field,
+                  styles.info_type,
+                  styles.active,
+                ].join(" ")}
+              >
                 Lot: #12345678
               </div>
-              <div className="title__Info__Field info_type">
+              <div
+                className={[
+                  styles.title__Info__Field,
+                  styles.info_type,
+                  styles.title__Info__Field_more,
+                ].join(" ")}
+              >
                 More Information
               </div>
             </div>
@@ -67,31 +93,31 @@ const ProductItem = () => {
           </div>
           <Files />
         </div>
-        <div className="bid_Information">
+        <div className={styles.bid_Information}>
           <BidInfo active={active} />
-          <div className="sale_Information">
-            <div className="title__Info__Field">Sale Inforamation</div>
-            <div className="car_info_item shadow__Item">
+          <div className={styles.sale_Information}>
+            <div className={styles.title__Info__Field}>Sale Inforamation</div>
+            <div className={[styles.car_info_item, "shadow__Item"].join(" ")}>
               <p>Sale Inforamation</p>
               <p>
                 <FlagGeorgia /> Georgia
               </p>
             </div>
-            <div className="car_info_item shadow__Item">
+            <div className={[styles.car_info_item, "shadow__Item"].join(" ")}>
               <p>Address:</p>
               <p>45, Kote Aphkhazi Str, 45 Kote Afkhazi St, Tbilisi 0105</p>
             </div>
-            <div className="car_info_item shadow__Item">
+            <div className={[styles.car_info_item, "shadow__Item"].join(" ")}>
               <p>Mail:</p>
               <p>globalshipping@gmail.com</p>
             </div>
-            <div className="car_info_item shadow__Item">
+            <div className={[styles.car_info_item, "shadow__Item"].join(" ")}>
               <p>Ph. Number:</p>
               <p>+995 350 223 334</p>
             </div>
-            <div className="car_info_item shadow__Item">
+            <div className={[styles.car_info_item, "shadow__Item"].join(" ")}>
               <p>Time Number:</p>
-              <p className="time_number">0d 24h 1min</p>
+              <p className={styles.time_number}>0d 24h 1min</p>
             </div>
           </div>
         </div>

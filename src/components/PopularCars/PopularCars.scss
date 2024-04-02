@@ -1,0 +1,95 @@
+.popular_cars {
+  position: relative;
+  overflow: hidden;
+
+  &_list {
+    width: 80%;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+  }
+}
+
+.popular_car_item {
+  > img {
+    width: 200px;
+    height: 200px;
+  }
+
+  &_image {
+    width: 200px;
+    height: 200px;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  &_info {
+    display: flex;
+    justify-content: space-between;
+    color: #094067;
+
+    > p:last-child {
+      color: #3da9fc;
+    }
+  }
+}
+
+.sold_car_info {
+  position: relative;
+  bottom: 0;
+  top: 70%;
+  z-index: 117;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+
+  > div {
+    background-color: #094067;
+    border-top-right-radius: 16px;
+    padding: 10px;
+    color: white;
+  }
+
+  > img {
+    width: 90px;
+    height: 60px;
+  }
+}
+
+.car_image1 {
+  background: url("../../assets/PopularCarImage.jpeg");
+}
+.car_image2 {
+  background: url("../../assets/PopularCarImage2.jpg");
+}
+.car_image3 {
+  background: url("../../assets/PopularCarImage3.jpeg");
+}
+.car_image4 {
+  background: url("../../assets/PopularCarImage4.jpeg");
+}
+.car_image5 {
+  background: url("../../assets/PopularCarImage.jpeg");
+}
+
+.popular_cars_nextprevBtn {
+  width: 100%;
+  top: 0;
+  bottom: 0;
+
+  .prev,
+  .next {
+    width: 26px;
+    height: 26px;
+    padding: 5px;
+    border-radius: 50%;
+    background-color: white;
+    top: 40%;
+  }
+
+  .next {
+    @media (max-width: 769px) {
+      top: 60%;
+    }
+  }
+}

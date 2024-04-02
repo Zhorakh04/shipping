@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./MyButton.module.css";
+import styles from "./MyButton.module.scss";
 
 const MyButton = ({ ...props }: any) => {
   const classname = props.className?.length

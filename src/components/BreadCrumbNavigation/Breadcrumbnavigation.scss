@@ -1,0 +1,134 @@
+@import "../../styles/variables.scss";
+
+.breadcrumb_navigation > div {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px 0;
+  padding: 12px 0;
+}
+
+.navigatinoBtns {
+  display: flex;
+
+  > button {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 12px;
+    font-size: $fontsize2;
+    height: 30px;
+    width: fit-content;
+    color: $color3;
+    @media (max-width: 769px) {
+      padding: 15px 12px;
+      height: 44px;
+    }
+  }
+
+  @media (max-width: 420px) {
+    width: 100%;
+    justify-content: flex-end;
+  }
+}
+
+.navigationPrev {
+  position: relative;
+  right: 5px;
+}
+
+.navigation {
+  box-shadow: var(--blur1);
+}
+
+.breadcrumb_navigation_list {
+  display: flex;
+  align-items: center;
+  font-size: $fontsize2;
+  @media (max-width: 769px) {
+    button {
+      display: none;
+    }
+  }
+}
+
+.breadcrumb_navigation_item {
+  background: white;
+  position: relative;
+  font-size: $fontsize2;
+  width: auto;
+  padding: 8px 11px;
+  color: $color1;
+  line-height: 14.06px;
+  font-size: 12px;
+  height: 30px;
+
+  &:first-child {
+    background: none;
+  }
+
+  &:nth-child(2) {
+    box-shadow: var(--blur3);
+    z-index: 1;
+    left: 4px;
+  }
+
+  &:nth-child(3) {
+    box-shadow: var(--blur2);
+    z-index: 2;
+    right: 8px;
+
+    > span {
+      display: none;
+    }
+
+    @media (max-width: 769px) {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 14px 12px;
+      height: 44px;
+      > span {
+        display: inline;
+      }
+    }
+  }
+
+  &:last-child {
+    background: #094067;
+    color: white;
+    right: 12px;
+    box-shadow: var(--blur1);
+    z-index: 3;
+  }
+}
+
+.auction {
+  .navigatinoBtns {
+    display: none;
+
+    @media (max-width: 769px) {
+      max-height: 44px;
+    }
+
+    @media (max-width: 365px) {
+      width: 100%;
+      justify-content: flex-end;
+    }
+  }
+}
+
+.navigationPrev:disabled {
+  opacity: 0.6;
+}
+
+.textButton {
+  > span {
+    display: none;
+    @media (max-width: 769px) {
+      display: inline;
+    }
+  }
+}

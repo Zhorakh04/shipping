@@ -1,0 +1,164 @@
+@import "../../styles/variables.scss";
+@import "../../styles/product.scss";
+
+%title__Info__Field {
+  background-color: $color1;
+  color: white;
+  padding: 10px 8px 11px 8px;
+  border-radius: 16px 16px 0 0;
+  height: 40px;
+  font-size: 1rem;
+  box-shadow: $blur1;
+}
+
+%info_item_column {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.title__Info__Field {
+  @extend %title__Info__Field;
+  &_more {
+    color: $color2;
+  }
+  @media (max-width: 320px) {
+    font-size: 0.925rem;
+  }
+}
+
+.product_info {
+  @extend %product_info;
+  @media (max-width: 769px) {
+    grid-template-columns: auto;
+    position: relative;
+  }
+
+  &_image {
+    overflow: hidden;
+    max-height: 500px;
+  }
+
+  &_images_list {
+    margin-top: 8px;
+    display: grid;
+    grid-template-rows: 1fr;
+    gap: 8px;
+
+    @media (max-width: 769px) {
+      grid-template-columns: repeat(5, minmax(148px, 1fr));
+    }
+
+    @media (max-width: 959px) {
+      > img {
+        max-height: 75px;
+        min-height: 75px;
+      }
+    }
+  }
+
+  &_main_img {
+    width: 100%;
+    background: url("../../assets/productItemImage1.jpeg") no-repeat center;
+    background-size: cover;
+
+    @media (max-width: 320px) {
+      width: calc(100vw - 32px);
+    }
+
+    @media (max-width: 769px) {
+      padding-top: calc(30% + 25vw);
+    }
+  }
+}
+
+.car_lot_information {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.car_info_list {
+  @extend %info_item_column;
+}
+
+.info_types {
+  display: flex;
+  margin-bottom: 12px;
+}
+
+.info_type {
+  background-color: white;
+  width: 50%;
+
+  &.active {
+    background-color: $color1;
+    color: white;
+  }
+}
+
+.product_info {
+  .bid_Information {
+    z-index: 0;
+    padding: 0px 12px;
+    margin-top: 0px;
+    @media (max-width: 769px) {
+      z-index: 1;
+    }
+  }
+}
+.bid_Information {
+  background-color: white;
+  margin-top: -12px;
+  padding-top: 12px;
+  z-index: 1;
+
+  @media (max-width: 769px) {
+    height: auto;
+  }
+}
+
+.bid_button {
+  background-color: #3da9fcb2;
+}
+
+.buy_button {
+  background-color: white;
+  border: 1px solid $color2;
+  color: $color2;
+}
+
+.sale_Information {
+  @extend %info_item_column;
+
+  .car_info_item {
+    height: auto;
+  }
+}
+
+.time_number {
+  color: red;
+}
+
+.product_image_fone {
+  background: #0940674d;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @media (max-width: 769px) {
+    display: none;
+  }
+}
+
+.view_more {
+  display: none;
+
+  @media (max-width: 769px) {
+    display: block;
+  }
+}

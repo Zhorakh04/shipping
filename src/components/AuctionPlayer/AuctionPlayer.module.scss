@@ -1,0 +1,391 @@
+@import "../../styles/variables.scss";
+@import "../../styles/product.scss";
+@import "../Product//ProductItem.module.scss";
+
+%flex-element-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+%flex-element-space_between {
+  display: flex;
+  justify-content: space-between;
+}
+
+%bgItem {
+  background-size: cover !important;
+  background-position: center !important;
+}
+
+.live_now {
+  > div:first-child {
+    display: flex;
+    align-items: center;
+    font-size: 34px;
+    color: $success;
+
+    svg {
+      width: 34px;
+      height: 34px;
+    }
+
+    h4 {
+      font-weight: 400;
+    }
+  }
+
+  > div:not(.live_now > div:first-child) {
+    color: $color3;
+    @extend %flex-element-space_between;
+
+    .participants_count {
+      font-size: 24px;
+      font-weight: 400;
+    }
+  }
+
+  @media (max-width: 320px) {
+    & > div:first-child {
+      > h4 {
+        font-size: 20px;
+      }
+
+      font-size: 24px;
+    }
+
+    .participants_count {
+      font-size: 14px;
+    }
+  }
+}
+
+.product_header {
+  margin: 16px 0;
+  background-color: $color1;
+  color: white;
+  padding: 10px;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+  height: auto;
+
+  .bid_header_lot {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 24px;
+
+    @media (max-width: 769px) {
+      font-size: 20px;
+    }
+
+    @media (max-width: 320px) {
+      display: none;
+    }
+  }
+
+  &.product_info {
+    justify-content: space-between;
+    @extend %flex-element-center;
+
+    @media (max-width: 769px) {
+      flex-direction: column-reverse;
+      align-items: flex-start;
+    }
+
+    @media (max-width: 1067px) {
+      justify-content: space-around;
+    }
+  }
+}
+
+.upcomming_lots_title {
+  margin-right: 110px;
+  font-size: 24px;
+  font-weight: 400;
+
+  @media (max-width: 1167px) {
+    display: none;
+  }
+}
+
+.car_name {
+  font-size: 34px;
+  margin-left: 70px;
+
+  @media (max-width: 769px) {
+    font-size: 24px;
+    margin: 0;
+  }
+}
+
+.auction_layer_lot {
+  display: flex;
+  justify-content: center;
+  flex: 1;
+  gap: 10px;
+
+  .auction_bid {
+    background: white;
+    padding: 16px 14px 0 14px;
+    flex-direction: column;
+    min-width: 288px;
+    gap: 16px;
+    z-index: 1;
+    margin-top: -8px;
+    @extend %flex-element-center;
+
+    @media (max-width: 990px) {
+      background: none;
+    }
+
+    > .Bid_button {
+      background: $color1;
+      color: white;
+
+      @media (max-width: 320px) {
+        background-color: $color2;
+      }
+    }
+  }
+
+  @media (max-width: 1090px) {
+    flex-wrap: wrap;
+  }
+
+  @media (max-width: 500px) {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+.precent {
+  width: 162px;
+  height: 162px;
+  @extend %flex-element-center;
+}
+
+.product_image_fone {
+  @media (max-width: 769px) {
+    display: none;
+  }
+}
+
+.previous_bid {
+  width: 100%;
+  > .title__Info__Field {
+    color: white;
+  }
+
+  .Bid_button {
+    border: 1px solid $color2;
+    color: $color2;
+  }
+
+  &_player_img {
+    width: 32px;
+    height: 32px;
+    border-radius: 5px;
+    @extend %bgItem;
+  }
+
+  > p {
+    margin-top: 21px;
+    text-align: center;
+    color: var(--color1);
+    font-weight: bold;
+  }
+
+  &_player_info {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 4px;
+    color: var(--color3);
+    font-size: 12px;
+
+    > div {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      padding: 14px;
+      border-radius: 8px;
+      height: 47px;
+      & > div:last-child {
+        width: 60px;
+      }
+    }
+
+    img {
+      width: 32px;
+      height: 32px;
+      border-radius: 7px;
+    }
+  }
+}
+
+.bid_player_info {
+  position: relative;
+  width: 132px;
+  height: 132px;
+  border-radius: 50%;
+  flex-direction: column;
+  background: white;
+  box-shadow: 0 4px 38px 0 #094067a3;
+  z-index: 3;
+  color: $color3;
+  font-size: 14px;
+  @extend %flex-element-center;
+
+  svg {
+    width: 45px;
+    height: 29px;
+  }
+}
+
+.auction_player {
+  .car_lot_information {
+    > div:first-child {
+      display: flex;
+      flex-wrap: wrap;
+      height: auto;
+
+      @media (max-width: 1162px) {
+        flex-direction: column;
+      }
+
+      @media (max-width: 1090px) {
+        display: block;
+      }
+
+      @media (max-width: 769px) {
+        flex-direction: column;
+      }
+    }
+  }
+
+  .product_bid_header {
+    flex-wrap: wrap;
+    @extend %flex-element-space_between;
+
+    @media (max-width: 769px) {
+      justify-content: space-between;
+    }
+  }
+}
+
+.product_info_images_list_item {
+  position: relative;
+}
+
+.product_info {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  @media (max-width: 1162px) {
+    justify-content: space-around;
+  }
+
+  .product_info_images {
+    flex: 0 0 auto;
+    max-width: 305px;
+    width: 40%;
+    max-height: fit-content;
+    margin-bottom: 24px;
+
+    @media (max-width: 769px) {
+      min-width: 100%;
+      overflow: visible;
+      max-height: fit-content;
+    }
+
+    @media (max-width: 320px) {
+      margin: 0;
+    }
+
+    .product_info_main_img {
+      @media (max-width: 769px) {
+        padding-top: calc(40% + 30vw);
+        border-radius: 15px 15px 0 0;
+      }
+
+      @media (max-width: 320px) {
+        display: none;
+      }
+    }
+
+    .product_info_images_list {
+      &_item {
+        max-height: 111px;
+        min-height: 111px;
+      }
+
+      @media (max-width: 769px) {
+        display: flex;
+        width: 100vw;
+        justify-items: right;
+        gap: 0;
+        margin-left: -40px;
+
+        > * {
+          min-width: 250px;
+          min-height: 150px;
+        }
+
+        &_item {
+          margin: 0 4px;
+
+          &:first-child {
+            margin: 0 4px 0 0;
+          }
+          &:last-child {
+            margin: 0 0 0 4px;
+          }
+        }
+
+        &::before,
+        &::after {
+          content: "";
+          min-width: 40px;
+          max-width: 40px;
+        }
+      }
+
+      @media (max-width: 568px) {
+        margin-left: -16px;
+        &::before,
+        &::after {
+          min-width: 16px;
+          max-width: 16px;
+        }
+      }
+    }
+    .product_info_main_img {
+      @media (max-width: 769px) {
+        padding-top: calc(40% + 30vw);
+        border-radius: 15px 15px 0 0;
+      }
+
+      @media (max-width: 320px) {
+        display: none;
+      }
+    }
+
+    @media (max-width: 320px) {
+      .product_info_images_list {
+        div,
+        img {
+          max-height: 74px;
+          min-height: 74px;
+          max-width: 123px;
+          min-width: 123px;
+        }
+      }
+    }
+  }
+
+  .car_lot_information {
+    flex: 1;
+    width: 100%;
+  }
+}
